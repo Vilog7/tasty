@@ -128,20 +128,20 @@ if (!supportsNativeScrollDriven) {
       let scale = 1;
 
       if (i === 0) {
-        if (exitP <= 0.55) {
+        if (exitP <= 0.5) {
           opacity = 1;
           scale = 1;
-        } else if (exitP < 0.85) {
-          const t = (exitP - 0.55) / 0.3;
+        } else if (exitP < 0.8) {
+          const t = (exitP - 0.5) / 0.3;
           opacity = 1 - t;
           scale = 1 + t * 0.04;
         }
       } else if (i === chapterEls.length - 1) {
-        if (entryP <= 0.2) {
+        if (entryP <= 0.15) {
           opacity = 0;
           scale = 0.95;
-        } else if (entryP < 0.75) {
-          const t = (entryP - 0.2) / 0.55;
+        } else if (entryP < 0.6) {
+          const t = (entryP - 0.15) / 0.45;
           opacity = t;
           scale = 0.95 + t * 0.05;
         } else {
@@ -149,17 +149,17 @@ if (!supportsNativeScrollDriven) {
           scale = 1;
         }
       } else {
-        if (entryP <= 0.2 || exitP >= 0.85) {
+        if (entryP <= 0.15 || exitP >= 0.8) {
           opacity = 0;
-        } else if (entryP < 0.75) {
-          const t = (entryP - 0.2) / 0.55;
+        } else if (entryP < 0.6) {
+          const t = (entryP - 0.15) / 0.45;
           opacity = t;
           scale = 0.95 + t * 0.05;
-        } else if (exitP <= 0.55) {
+        } else if (exitP <= 0.5) {
           opacity = 1;
           scale = 1;
         } else {
-          const t = (exitP - 0.55) / 0.3;
+          const t = (exitP - 0.5) / 0.3;
           opacity = 1 - t;
           scale = 1 + t * 0.04;
         }
