@@ -1,16 +1,16 @@
 /**
- * Tasty Multicuisine Restaurant — Interactive Scrollytelling & Controls
+ * Riverside Restaurant — Interactive Scrollytelling & Controls
  *
  * Uses native CSS Scroll-Driven Animations where supported, with feature-detected
- * JS fallbacks for scroll progress, rotating dish transitions, and dialog light-dismiss.
+ * JS fallbacks for scroll progress, rotating dish transitions, mobile drawer, and dialog light-dismiss.
  */
 
 const DISH_CHAPTERS = [
-  { index: '01 / 05', name: 'Tandoori Chicken Tikka Kebabs' },
-  { index: '02 / 05', name: 'Royal Kolkata Chicken Dum Biryani' },
-  { index: '03 / 05', name: 'Spiced Chicken Kosha & Herb Paratha' },
-  { index: '04 / 05', name: 'Charred Paneer Tikka Masala (Veg)' },
-  { index: '05 / 05', name: 'Kolkata Indo-Chinese Wok Platter' },
+  { index: '01 / 05', name: 'Ajwain Fish & Tandoori Kebabs' },
+  { index: '02 / 05', name: 'Aromatic Royal Biryani' },
+  { index: '03 / 05', name: 'Kadai Chicken & Tandoori Roti' },
+  { index: '04 / 05', name: 'Kadhai Paneer & Kashmiri Pulao' },
+  { index: '05 / 05', name: 'Hong Kong Noodles & Chilli Classics' },
 ];
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -51,7 +51,6 @@ function setActiveChapter(chapterNum) {
     }
   }
 
-  // Under reduced motion (no continuous CSS scroll-driven animation), swap dish cleanly by chapter
   if (prefersReducedMotion.matches) {
     for (let i = 0; i < dishLayers.length; i++) {
       dishLayers[i].style.opacity = i === chapterNum - 1 ? '1' : '0';
@@ -90,7 +89,6 @@ updateHeaderState();
 
 /* ==========================================================================
    2. FEATURE-DETECTED FALLBACK FOR SCROLL-DRIVEN ROTATING DISH & PROGRESS BAR
-   Only executes when native CSS Scroll-Driven Animations are unavailable.
    ========================================================================== */
 if (!CSS.supports('animation-timeline', 'scroll()')) {
   const progressBar = document.getElementById('scroll-progress');
@@ -115,14 +113,12 @@ if (!supportsNativeScrollDriven) {
     const maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
     const scrollProgress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
 
-    // Rotate turntable smoothly 0 -> 450 deg across page scroll
     turntableEl.style.transform = `rotate(${(scrollProgress * 450).toFixed(2)}deg)`;
 
-    // Cross-dissolve stacked plates matching the native CSS timeline math
     for (let i = 0; i < chapterEls.length; i++) {
       const rect = chapterEls[i].getBoundingClientRect();
-      const entryP = (vh - rect.top) / vh; // 0 when entering bottom, 1 when top hits top
-      const exitP = (vh - rect.bottom) / vh; // 0 when bottom hits bottom, 1 when exited top
+      const entryP = (vh - rect.top) / vh;
+      const exitP = (vh - rect.bottom) / vh;
 
       let opacity = 0;
       let scale = 1;
@@ -198,7 +194,6 @@ const playIcon = steamToggleBtn.querySelector('.icon--play');
 let steamPaused = prefersReducedMotion.matches;
 let steamRafId = null;
 
-// Scale particle budget cleanly for mobile GPUs while keeping zero per-frame allocations
 const WISP_COUNT = window.innerWidth < 768 ? 10 : 16;
 const wisps = [];
 for (let i = 0; i < WISP_COUNT; i++) {
@@ -246,7 +241,6 @@ function renderSteamFrame() {
     p.x = p.baseX + Math.sin(p.phase) * p.swayAmp * (0.4 + p.age);
 
     const currentRadius = p.radius * (0.75 + p.age * 1.65);
-    // Smooth bell-curve fade: gently appears over plate, curls upward, dissolves into darkness
     const lifeAlpha = Math.sin(Math.min(1, p.age) * Math.PI) * p.alpha;
 
     if (p.age >= 1 || p.y < -currentRadius) {
@@ -309,7 +303,7 @@ prefersReducedMotion.addEventListener('change', (e) => {
 syncSteamUI();
 
 /* ==========================================================================
-   3B. SWIPE-TO-DISMISS MOBILE NAVIGATION DRAWER (modern-web-guidance)
+   4. SWIPE-TO-DISMISS MOBILE NAVIGATION DRAWER
    ========================================================================== */
 const mobileDrawer = document.getElementById('mobile-drawer');
 const drawerOpenBtn = document.getElementById('drawer-open');
@@ -319,7 +313,6 @@ const drawerSheet = mobileDrawer?.querySelector('.mobile-drawer__sheet');
 
 if (mobileDrawer && drawerOpenBtn && drawerCloseBtn && drawerScroller && drawerSheet) {
   let pendingTargetHash = null;
-  let pendingOpenReserve = false;
 
   const openDrawer = async () => {
     if (mobileDrawer.open) return;
@@ -355,10 +348,6 @@ if (mobileDrawer && drawerOpenBtn && drawerCloseBtn && drawerScroller && drawerS
       if (target) {
         target.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
       }
-    } else if (pendingOpenReserve) {
-      pendingOpenReserve = false;
-      const reserveModal = document.getElementById('reserve-dialog');
-      if (reserveModal && !reserveModal.open) reserveModal.showModal();
     }
   };
 
@@ -374,7 +363,6 @@ if (mobileDrawer && drawerOpenBtn && drawerCloseBtn && drawerScroller && drawerS
   );
   drawerObserver.observe(drawerSheet);
 
-  // Backdrop fade fallback when scroll-driven animations are unavailable
   if (!CSS.supports('animation-timeline: scroll()')) {
     drawerScroller.addEventListener(
       'scroll',
@@ -389,12 +377,10 @@ if (mobileDrawer && drawerOpenBtn && drawerCloseBtn && drawerScroller && drawerS
   drawerOpenBtn.addEventListener('click', openDrawer);
   drawerCloseBtn.addEventListener('click', closeDrawer);
 
-  // Tap outside sheet on dimmed area closes with smooth slide-out
   mobileDrawer.addEventListener('click', (event) => {
     if (!drawerSheet.contains(event.target)) closeDrawer();
   });
 
-  // Escape intercepts instant close to play smooth slide-out
   mobileDrawer.addEventListener('cancel', (event) => {
     if (event.cancelable) {
       event.preventDefault();
@@ -402,7 +388,6 @@ if (mobileDrawer && drawerOpenBtn && drawerCloseBtn && drawerScroller && drawerS
     }
   });
 
-  // Navigation links close drawer first, then smoothly scroll to section
   mobileDrawer.querySelectorAll('[data-drawer-link]').forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
@@ -410,22 +395,13 @@ if (mobileDrawer && drawerOpenBtn && drawerCloseBtn && drawerScroller && drawerS
       closeDrawer();
     });
   });
-
-  // Reserve button inside drawer hands off cleanly to the reservation modal
-  mobileDrawer.querySelectorAll('[data-drawer-close-trigger]').forEach((btn) => {
-    btn.addEventListener('click', (event) => {
-      event.stopPropagation();
-      pendingOpenReserve = true;
-      closeDrawer();
-    });
-  });
 }
 
 /* ==========================================================================
-   4. MENU CATEGORY FILTERING
+   5. MENU CATEGORY FILTERING
    ========================================================================== */
 const menuTabs = Array.from(document.querySelectorAll('.menu-tab'));
-const menuItems = Array.from(document.querySelectorAll('.menu-item'));
+const menuEntries = Array.from(document.querySelectorAll('.menu-entry'));
 
 menuTabs.forEach((tab) => {
   tab.addEventListener('click', () => {
@@ -437,56 +413,43 @@ menuTabs.forEach((tab) => {
       menuTabs[i].setAttribute('aria-selected', String(active));
     }
 
-    for (let i = 0; i < menuItems.length; i++) {
-      const cat = menuItems[i].dataset.category;
-      menuItems[i].hidden = filter !== 'all' && cat !== filter;
+    for (let i = 0; i < menuEntries.length; i++) {
+      const cat = menuEntries[i].dataset.category;
+      menuEntries[i].hidden = filter !== 'all' && cat !== filter;
     }
   });
 });
 
 /* ==========================================================================
-   5. HORIZONTAL UPDATES CAROUSEL CONTROLS
+   6. NATIVE <dialog> VISIT / CALL MODAL + CLOSED-BY FALLBACK
    ========================================================================== */
-const updatesScroller = document.getElementById('updates-scroller');
-document.getElementById('updates-prev')?.addEventListener('click', () => {
-  updatesScroller.scrollBy({ left: -260, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
-});
-document.getElementById('updates-next')?.addEventListener('click', () => {
-  updatesScroller.scrollBy({ left: 260, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
-});
+const visitDialog = document.getElementById('visit-dialog');
+const openVisitButtons = document.querySelectorAll('[data-open-visit]');
 
-/* ==========================================================================
-   6. NATIVE <dialog> RESERVATION MODAL + CLOSED-BY FALLBACK
-   ========================================================================== */
-const reserveDialog = document.getElementById('reserve-dialog');
-const openReserveButtons = document.querySelectorAll('[data-open-reserve]:not([data-drawer-close-trigger])');
-
-openReserveButtons.forEach((btn) => {
+openVisitButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    if (!reserveDialog.open) {
-      reserveDialog.showModal();
+    if (visitDialog && !visitDialog.open) {
+      visitDialog.showModal();
     }
   });
 });
 
-// Reset returnValue on close so stale values never leak across re-opens
-reserveDialog.addEventListener('close', () => {
-  reserveDialog.returnValue = '';
+visitDialog?.addEventListener('close', () => {
+  visitDialog.returnValue = '';
 });
 
-// Fallback for browsers without <dialog closedby="any"> support (e.g., Safari)
-if (!('closedBy' in HTMLDialogElement.prototype)) {
+if (visitDialog && !('closedBy' in HTMLDialogElement.prototype)) {
   const isOutsideDialog = (e, dialog) => {
     const r = dialog.getBoundingClientRect();
     return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
   };
   let pressedOutside = false;
-  reserveDialog.addEventListener('pointerdown', (e) => {
-    pressedOutside = isOutsideDialog(e, reserveDialog);
+  visitDialog.addEventListener('pointerdown', (e) => {
+    pressedOutside = isOutsideDialog(e, visitDialog);
   });
-  reserveDialog.addEventListener('pointerup', (e) => {
-    if (pressedOutside && isOutsideDialog(e, reserveDialog)) {
-      reserveDialog.close();
+  visitDialog.addEventListener('pointerup', (e) => {
+    if (pressedOutside && isOutsideDialog(e, visitDialog)) {
+      visitDialog.close();
     }
   });
 }
@@ -513,6 +476,6 @@ copyAddressBtn?.addEventListener('click', async () => {
     await navigator.clipboard.writeText(addressText);
     showToast('Address copied to clipboard');
   } catch {
-    showToast('257, Mahatma Gandhi Rd, Khadina More, Chinsurah');
+    showToast('PRATAPPUR MORE, near MAYURPANKHI GHAT, Chinsurah');
   }
 });

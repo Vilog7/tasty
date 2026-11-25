@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Tasty Multicuisine Restaurant — Chinsurah, Hooghly | Est. 2011</title>
-  <meta name="description" content="Family-friendly multicuisine restaurant in Chinsurah, Hooghly serving diverse Indian dishes, flavorful biryanis, kebabs, and classic Chinese cuisine since 2011. Open daily till 12 AM.">
+  <title>Riverside Restaurant — Pratappur More, Chinsurah | Scenic North Indian Dining</title>
+  <meta name="description" content="Scenic North Indian riverside restaurant near Mayurpankhi Ghat, Chinsurah featuring outdoor seating, kids' birthday gatherings, kebabs, biryani, dimsums, and Chinese favorites. Rated 4.3 across 952 reviews. Open till 11 PM.">
   <meta name="theme-color" content="#0f0906">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='18' fill='%230f0906'/%3E%3Ccircle cx='18' cy='18' r='15.5' fill='none' stroke='%23f6ca82' stroke-width='1.5'/%3E%3Cpath d='M12 12.5h12M18 12.5V24M14.5 24h7' fill='none' stroke='%23f6ca82' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='18' fill='%230f0906'/%3E%3Ccircle cx='18' cy='18' r='15.5' fill='none' stroke='%23f6ca82' stroke-width='1.5'/%3E%3Cpath d='M13.5 24V12h5.2a3.6 3.6 0 0 1 0 7.2h-5.2M18 19.2L22.5 24' fill='none' stroke='%23f6ca82' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
   <!-- Typography: Playfair Display + Karla -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,19 +37,18 @@
         decoding="async">
     </picture>
 
-    <!-- Ambient editorial scrim (keeps left copy ultra-legible & spotlights right plate) -->
+    <!-- Soft seamless vignette scrim (no boxes — lets typography read crisply directly on the wood) -->
     <div class="stage-scrim"></div>
     <div class="stage-spotlight" id="stage-spotlight"></div>
 
     <!-- Layer 2: Fixed Plate Anchor Zone -->
     <div class="plate-anchor">
-      <!-- Stationary directional cast shadow & golden halo (never rotates with plate) -->
       <div class="plate-cast-shadow"></div>
       <div class="plate-orbit-ring"></div>
 
       <!-- Rotating Turntable driven by root scroll-timeline -->
       <div class="plate-turntable" id="plate-turntable">
-        <!-- Dish 1: Tandoori Chicken Tikka Kebabs (LCP candidate #2, initially visible) -->
+        <!-- Dish 1: Kebabs (LCP candidate #2, initially visible) -->
         <picture class="dish-layer dish-layer--1" data-dish="1">
           <source srcset="assets/dish-kebabs.webp" type="image/webp">
           <img
@@ -61,7 +60,7 @@
             decoding="async">
         </picture>
 
-        <!-- Dish 2: Royal Kolkata Chicken Dum Biryani (above fold but initially hidden -> fetchpriority="low") -->
+        <!-- Dish 2: Biryani (above fold but initially hidden -> fetchpriority="low") -->
         <picture class="dish-layer dish-layer--2" data-dish="2">
           <source srcset="assets/dish-biryani.webp" type="image/webp">
           <img
@@ -73,7 +72,7 @@
             decoding="async">
         </picture>
 
-        <!-- Dish 3: Spiced Chicken Kosha & Herb Paratha -->
+        <!-- Dish 3: Kadai Chicken & Tandoori Roti -->
         <picture class="dish-layer dish-layer--3" data-dish="3">
           <source srcset="assets/dish-curry.webp" type="image/webp">
           <img
@@ -85,7 +84,7 @@
             decoding="async">
         </picture>
 
-        <!-- Dish 4: Charred Paneer Tikka Masala (Vegetarian Signature) -->
+        <!-- Dish 4: Kadhai Paneer & Kashmiri Pulao -->
         <picture class="dish-layer dish-layer--4" data-dish="4">
           <source srcset="assets/dish-paneer.webp" type="image/webp">
           <img
@@ -97,7 +96,7 @@
             decoding="async">
         </picture>
 
-        <!-- Dish 5: Kolkata Indo-Chinese Wok Platter -->
+        <!-- Dish 5: Hong Kong Egg Chicken Noodles & Chilli Classics -->
         <picture class="dish-layer dish-layer--5" data-dish="5">
           <source srcset="assets/dish-chinese.webp" type="image/webp">
           <img
@@ -113,52 +112,51 @@
       <!-- Subtle live upward-drifting steam canvas positioned right over the hot dish -->
       <canvas class="steam-canvas" id="steam-canvas" width="600" height="600"></canvas>
 
-      <!-- Live Course Plaque beneath the rotating stoneware plate -->
+      <!-- Frameless Course Caption directly below the rotating plate -->
       <div class="plate-plaque" id="plate-plaque">
         <span class="plate-plaque__index" id="plaque-index">01 / 05</span>
         <span class="plate-plaque__divider"></span>
-        <span class="plate-plaque__name" id="plaque-name">Tandoori Chicken Tikka Kebabs</span>
+        <span class="plate-plaque__name" id="plaque-name">Ajwain Fish &amp; Tandoori Kebabs</span>
       </div>
     </div>
   </div>
 
   <!-- =====================================================================
-       STICKY HEADER NAVIGATION
+       FRAMELESS HEADER NAVIGATION
        ===================================================================== -->
   <header class="site-header" id="site-header">
     <div class="site-header__inner">
-      <a href="#hero" class="brand-mark" aria-label="Tasty Multicuisine Restaurant — Back to top">
+      <a href="#hero" class="brand-mark" aria-label="Riverside Restaurant — Back to top">
         <span class="brand-mark__emblem" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="18" r="16.5" stroke="currentColor" stroke-width="1.25" stroke-opacity="0.7"/>
+            <circle cx="18" cy="18" r="16.5" stroke="currentColor" stroke-width="1.25" stroke-opacity="0.72"/>
             <circle cx="18" cy="18" r="12.5" stroke="currentColor" stroke-width="0.9" stroke-dasharray="2 2.5" stroke-opacity="0.5"/>
-            <path d="M12.5 13H23.5M18 13V24.5M15 24.5H21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.5 23.5V12.5h5a3.4 3.4 0 0 1 0 6.8h-5M17.8 19.3l4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
         <span class="brand-mark__text">
-          <span class="brand-mark__title">Tasty</span>
-          <span class="brand-mark__sub">Multicuisine · Est. 2011</span>
+          <span class="brand-mark__title">Riverside</span>
+          <span class="brand-mark__sub">Chinsurah · Hooghly</span>
         </span>
       </a>
 
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#story">Heritage</a>
+        <a href="#ambience">Ambience</a>
         <a href="#menu">Menu</a>
-        <a href="#experience">Updates</a>
+        <a href="#reviews">Reviews</a>
         <a href="#visit">Visit &amp; Hours</a>
       </nav>
 
       <div class="header-actions">
-        <span class="hours-chip" id="hours-chip" title="Open daily until midnight">
-          <span class="hours-chip__dot" aria-hidden="true"></span>
-          <span>Open · Closes 12 AM</span>
+        <span class="hours-inline" id="hours-chip" title="Open daily until 11 PM">
+          <span class="hours-dot" aria-hidden="true"></span>
+          <span>Open · Closes 11 PM</span>
         </span>
-        <button type="button" class="btn btn--primary btn--sm header-reserve-btn" data-open-reserve>
+        <button type="button" class="btn btn--primary btn--sm header-reserve-btn" data-open-visit>
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <path d="M16 2v4M8 2v4M3 10h18"/>
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          <span>Reserve Table</span>
+          <span>Call / Visit</span>
         </button>
         <button
           type="button"
@@ -183,8 +181,8 @@
       <nav class="mobile-drawer__sheet" aria-label="Mobile navigation">
         <div class="mobile-drawer__head">
           <div class="brand-mark__text">
-            <span class="brand-mark__title">Tasty</span>
-            <span class="brand-mark__sub">Chinsurah · Since 2011</span>
+            <span class="brand-mark__title">Riverside</span>
+            <span class="brand-mark__sub">Near Mayurpankhi Ghat</span>
           </div>
           <button type="button" class="icon-btn" id="drawer-close" aria-label="Close navigation menu" autofocus>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -195,21 +193,27 @@
 
         <ul class="mobile-drawer__links">
           <li><a href="#hero" data-drawer-link><span class="mobile-drawer__num">01</span> Welcome · Kebabs</a></li>
-          <li><a href="#story" data-drawer-link><span class="mobile-drawer__num">02</span> Our Heritage · Biryani</a></li>
-          <li><a href="#menu" data-drawer-link><span class="mobile-drawer__num">03</span> Signature Menu · Curries</a></li>
-          <li><a href="#experience" data-drawer-link><span class="mobile-drawer__num">04</span> Veg Feast &amp; Updates</a></li>
-          <li><a href="#visit" data-drawer-link><span class="mobile-drawer__num">05</span> Visit, Hours &amp; Contact</a></li>
+          <li><a href="#ambience" data-drawer-link><span class="mobile-drawer__num">02</span> Riverside Ambience · Biryani</a></li>
+          <li><a href="#menu" data-drawer-link><span class="mobile-drawer__num">03</span> Menu Highlights · Mains</a></li>
+          <li><a href="#reviews" data-drawer-link><span class="mobile-drawer__num">04</span> 4.3 ★ Reviews (952)</a></li>
+          <li><a href="#visit" data-drawer-link><span class="mobile-drawer__num">05</span> Visit, Hours &amp; Phone</a></li>
         </ul>
 
         <div class="mobile-drawer__meta">
           <div class="mobile-drawer__status">
-            <span class="hours-chip__dot" aria-hidden="true"></span>
-            <span>Open · Closes 12 AM · ₹200–400</span>
+            <span class="hours-dot" aria-hidden="true"></span>
+            <span>Open · Closes 11 PM · ₹200–400</span>
           </div>
-          <p class="mobile-drawer__addr">257, Mahatma Gandhi Rd, Khadina More, Chinsurah, WB 712101</p>
+          <p class="mobile-drawer__addr">PRATAPPUR MORE, near MAYURPANKHI GHAT, Chinsurah R S, Chinsurah, West Bengal 712103</p>
           <div class="mobile-drawer__actions">
-            <button type="button" class="btn btn--primary btn--sm" data-open-reserve data-drawer-close-trigger>Reserve Table</button>
-            <a href="tel:+919836259128" class="btn btn--ghost btn--sm">Call 098362 59128</a>
+            <a href="tel:+916289743827" class="btn btn--primary btn--sm">Call 062897 43827</a>
+            <a
+              href="https://maps.google.com/maps?sca_esv=fc9045e6de37b56e&amp;udm&amp;fvr=1&amp;pvq=Cg0vZy8xMWwxbXNoaF80IhoKFHJpdmVyc2lkZSByZXN0YXVyYW50EAIYA4kB2KSDEoJjl5o&amp;lqi=ChRyaXZlcnNpZGUgcmVzdGF1cmFudEjk_568hrKAgAhaHBAAEAEYACIUcml2ZXJzaWRlIHJlc3RhdXJhbnSSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&amp;vet=10CAAQoqAOahcKEwjYvNLBw6OYAxUAAAAAHQAAAAAQBw..i&amp;cs=1&amp;um=1&amp;ie=UTF-8&amp;fb=1&amp;gl=in&amp;sa=X&amp;ftid=0x39f897879badb905:0x9a9763821283a4d8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--ghost btn--sm">
+              Open Google Maps
+            </a>
           </div>
           <button type="button" class="mobile-drawer__steam-btn" data-steam-toggle>
             <span data-steam-label>Pause Steam</span>
@@ -227,40 +231,44 @@
       </svg>
       <span>Menu</span>
     </a>
-    <a href="tel:+919836259128" class="mobile-bottom-bar__item">
+    <a
+      href="https://maps.google.com/maps?sca_esv=fc9045e6de37b56e&amp;udm&amp;fvr=1&amp;pvq=Cg0vZy8xMWwxbXNoaF80IhoKFHJpdmVyc2lkZSByZXN0YXVyYW50EAIYA4kB2KSDEoJjl5o&amp;lqi=ChRyaXZlcnNpZGUgcmVzdGF1cmFudEjk_568hrKAgAhaHBAAEAEYACIUcml2ZXJzaWRlIHJlc3RhdXJhbnSSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&amp;vet=10CAAQoqAOahcKEwjYvNLBw6OYAxUAAAAAHQAAAAAQBw..i&amp;cs=1&amp;um=1&amp;ie=UTF-8&amp;fb=1&amp;gl=in&amp;sa=X&amp;ftid=0x39f897879badb905:0x9a9763821283a4d8"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mobile-bottom-bar__item">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span>Map</span>
+    </a>
+    <a href="tel:+916289743827" class="btn btn--primary mobile-bottom-bar__cta">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
       </svg>
-      <span>Call</span>
+      <span>Call 062897 43827</span>
     </a>
-    <button type="button" class="btn btn--primary mobile-bottom-bar__cta" data-open-reserve>
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="18" rx="2"/>
-        <path d="M16 2v4M8 2v4M3 10h18"/>
-      </svg>
-      <span>Reserve Table</span>
-    </button>
   </nav>
 
   <!-- Right-edge vertical scroll chapter rail (desktop) -->
   <nav class="chapter-rail" aria-label="Tasting course chapters">
-    <a href="#hero" class="chapter-rail__item is-active" data-chapter-link="1" aria-label="Chapter 1: Tandoori Kebabs — Welcome">
+    <a href="#hero" class="chapter-rail__item is-active" data-chapter-link="1" aria-label="Chapter 1: Kebabs — Welcome">
       <span class="chapter-rail__label">Kebabs</span>
       <span class="chapter-rail__dot" aria-hidden="true"></span>
     </a>
-    <a href="#story" class="chapter-rail__item" data-chapter-link="2" aria-label="Chapter 2: Kolkata Biryani — Our Heritage">
-      <span class="chapter-rail__label">Biryani</span>
+    <a href="#ambience" class="chapter-rail__item" data-chapter-link="2" aria-label="Chapter 2: Biryani — Riverside Ambience">
+      <span class="chapter-rail__label">Ambience</span>
       <span class="chapter-rail__dot" aria-hidden="true"></span>
     </a>
-    <a href="#menu" class="chapter-rail__item" data-chapter-link="3" aria-label="Chapter 3: Indian Curries — Signature Menu">
-      <span class="chapter-rail__label">Curries</span>
+    <a href="#menu" class="chapter-rail__item" data-chapter-link="3" aria-label="Chapter 3: Kadai Mains — Menu Highlights">
+      <span class="chapter-rail__label">Menu</span>
       <span class="chapter-rail__dot" aria-hidden="true"></span>
     </a>
-    <a href="#experience" class="chapter-rail__item" data-chapter-link="4" aria-label="Chapter 4: Paneer Tikka — Vegetarian &amp; Updates">
-      <span class="chapter-rail__label">Veg &amp; News</span>
+    <a href="#reviews" class="chapter-rail__item" data-chapter-link="4" aria-label="Chapter 4: Paneer Specialties — Guest Reviews">
+      <span class="chapter-rail__label">Reviews</span>
       <span class="chapter-rail__dot" aria-hidden="true"></span>
     </a>
-    <a href="#visit" class="chapter-rail__item" data-chapter-link="5" aria-label="Chapter 5: Indo-Chinese — Reservations &amp; Visit">
+    <a href="#visit" class="chapter-rail__item" data-chapter-link="5" aria-label="Chapter 5: Noodles &amp; Chilli — Visit Us">
       <span class="chapter-rail__label">Visit Us</span>
       <span class="chapter-rail__dot" aria-hidden="true"></span>
     </a>
@@ -279,449 +287,343 @@
   </button>
 
   <!-- =====================================================================
-       SCROLLYTELLING CHAPTERS (5 Chapters Driving the Rotating Plate)
+       FRAMELESS SCROLLYTELLING CHAPTERS (Text Directly Over Rustic Wood)
        ===================================================================== -->
   <main id="story-track" class="story-track">
 
-    <!-- CHAPTER 1: HERO (Dish 1: Smoky Tandoori Chicken Tikka Kebabs) -->
+    <!-- CHAPTER 1: HERO (Dish 1: Ajwain Fish & Tandoori Kebabs) -->
     <section id="hero" class="chapter chapter--hero" data-chapter="1" aria-labelledby="hero-heading">
       <div class="chapter__content">
         <p class="eyebrow">
           <span class="eyebrow__line" aria-hidden="true"></span>
-          Hooghly’s Beloved Culinary Destination · Since 2011
+          Near Mayurpankhi Ghat · Chinsurah, Hooghly
         </p>
 
         <h1 id="hero-heading" class="hero-title">
-          Tasty Multicuisine<br>
+          Riverside<br>
           <em>Restaurant</em>
         </h1>
 
         <p class="hero-lead">
-          Family-friendly multicuisine restaurant serving diverse Indian dishes, flavorful biryanis, and smoky kebabs in the heart of Chinsurah.
+          Scenic North Indian riverside restaurant featuring impressive outdoor seating and peaceful ambience along the Hooghly in Chinsurah.
         </p>
 
-        <!-- Service Options & Quick Facts -->
-        <ul class="service-pills" aria-label="Service highlights">
-          <li>
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-              <path d="m9 16 2 2 4-4"/>
+        <!-- Frameless Rating & Highlights Line -->
+        <ul class="inline-highlights" aria-label="Restaurant highlights">
+          <li class="rating-inline">
+            <svg class="icon icon--star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.2l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.97l-6.18 3.24 1.18-6.88-5-4.87 6.91-1L12 2.2z"/>
             </svg>
-            Reservations Required
+            <strong>4.3</strong>
+            <span>(952 Reviews)</span>
           </li>
-          <li>
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 12h18M5 12a7 7 0 0 1 14 0M4 16h16M7 20h10"/>
-            </svg>
-            All You Can Eat
-          </li>
-          <li>
-            <svg class="icon icon--veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-            </svg>
-            Vegetarian Options
-          </li>
+          <li>Outdoor Seating</li>
+          <li>Good for Kids’ Birthdays</li>
         </ul>
 
-        <!-- Price & Hours Meta Strip -->
-        <div class="meta-strip">
-          <div class="meta-strip__item">
-            <span class="meta-strip__label">Price Per Person</span>
-            <strong class="meta-strip__value">₹200–400</strong>
-            <span class="meta-strip__note">Reported by 207 people</span>
+        <!-- Frameless Key Details Strip (Hairline Rules Only, Zero Boxes) -->
+        <dl class="facts-strip">
+          <div class="facts-strip__item">
+            <dt>Price Per Person</dt>
+            <dd><strong>₹200–400</strong> <span>Reported by 62 people · Less Price</span></dd>
           </div>
-          <div class="meta-strip__sep" aria-hidden="true"></div>
-          <div class="meta-strip__item">
-            <span class="meta-strip__label">Dining Hours</span>
-            <strong class="meta-strip__value">Open · Closes 12 AM</strong>
-            <span class="meta-strip__note">Khadina More, Chinsurah</span>
+          <div class="facts-strip__item">
+            <dt>Hours Today</dt>
+            <dd><strong>Open · Closes 11 PM</strong> <span>Pratappur More, Chinsurah</span></dd>
           </div>
-        </div>
+        </dl>
 
-        <!-- Primary Action Buttons -->
+        <!-- Action Row -->
         <div class="cta-row">
-          <button type="button" class="btn btn--primary btn--lg" data-open-reserve>
-            <span>Book a Table</span>
+          <a href="#menu" class="btn btn--primary btn--lg">
+            <span>View Menu</span>
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M13 5l7 7-7 7"/>
             </svg>
-          </button>
-          <a href="tel:+919836259128" class="btn btn--ghost btn--lg">
+          </a>
+          <a href="tel:+916289743827" class="btn btn--ghost btn--lg">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
-            <span>098362 59128</span>
+            <span>062897 43827</span>
           </a>
         </div>
 
-        <a href="#story" class="scroll-cue">
+        <a href="#ambience" class="scroll-cue">
           <span class="scroll-cue__wheel" aria-hidden="true"></span>
-          <span>Scroll to spin through our signature courses</span>
+          <span>Scroll to rotate through our signature dishes</span>
         </a>
       </div>
     </section>
 
-    <!-- CHAPTER 2: OUR HERITAGE & STORY (Dish 2: Royal Kolkata Chicken Dum Biryani) -->
-    <section id="story" class="chapter" data-chapter="2" aria-labelledby="story-heading">
-      <div class="chapter__content reveal-card">
+    <!-- CHAPTER 2: RIVERSIDE AMBIENCE & DINING EXPERIENCE (Dish 2: Aromatic Biryani) -->
+    <section id="ambience" class="chapter" data-chapter="2" aria-labelledby="ambience-heading">
+      <div class="chapter__content reveal-copy">
         <p class="eyebrow">
           <span class="eyebrow__line" aria-hidden="true"></span>
-          From Tasty Multicuisine Restaurant
+          Scenic Hooghly Riverside Dining
         </p>
 
-        <h2 id="story-heading" class="section-title">
-          Serving Hooghly’s Families<br>
-          <em>With Warmth Since 2011</em>
+        <h2 id="ambience-heading" class="section-title">
+          Calm River Views,<br>
+          <em>Warm Hospitality</em>
         </h2>
 
-        <blockquote class="story-quote">
-          <p>
-            “Since 2011, Tasty Multicuisine Restaurant has been a beloved culinary destination in the Hooghly area, serving the communities of <strong>Bandel</strong>, <strong>Chinsurah</strong>, and <strong>Chandannagar</strong>. We offer a diverse menu that caters to every palate, from authentic Indian dishes and flavorful biryanis to classic Chinese cuisine and fast-food favorites.”
-          </p>
-          <p>
-            “As a family-friendly restaurant, we pride ourselves on providing a welcoming atmosphere and a wide variety of delicious options, ensuring a memorable dining experience for all. We also operate as a food court and offer convenient takeaway services, making it easy to enjoy our tasty offerings wherever you are.”
-          </p>
-        </blockquote>
+        <p class="editorial-lead">
+          Set right at <strong>Pratappur More near Mayurpankhi Ghat</strong>, Riverside Restaurant brings together fresh North Indian, tandoor, seafood, and wok-fired dishes with breezy outdoor riverside seating and a calm, welcoming atmosphere.
+        </p>
 
-        <div class="pillars-grid">
-          <article class="pillar-card">
-            <span class="pillar-card__num">15+ Yrs</span>
-            <h3>Hooghly Legacy</h3>
-            <p>Trusted across Bandel, Chinsurah &amp; Chandannagar since 2011.</p>
-          </article>
-          <article class="pillar-card">
-            <span class="pillar-card__num">3 Ways</span>
-            <h3>Dine, Court &amp; Go</h3>
-            <p>Family dine-in restaurant, lively food court &amp; quick takeaway.</p>
-          </article>
-          <article class="pillar-card">
-            <span class="pillar-card__num">₹200–400</span>
-            <h3>Honest Value</h3>
-            <p>Generous multicuisine portions reported by 207 diners.</p>
-          </article>
+        <div class="editorial-pillars">
+          <div class="editorial-pillar">
+            <span class="editorial-pillar__num">01</span>
+            <div>
+              <h3>Impressive Outdoor Seating</h3>
+              <p>Enjoy open-air tables overlooking peaceful riverside views near the Hooghly in Chinsurah.</p>
+            </div>
+          </div>
+
+          <div class="editorial-pillar">
+            <span class="editorial-pillar__num">02</span>
+            <div>
+              <h3>Good for Kids’ Birthdays &amp; Families</h3>
+              <p>Spacious, calm ambiance paired with polite, attentive staff for memorable family celebrations.</p>
+            </div>
+          </div>
+
+          <div class="editorial-pillar">
+            <span class="editorial-pillar__num">03</span>
+            <div>
+              <h3>Fresh Flavors &amp; Honest Pricing</h3>
+              <p>From bhetki crudo and slow-roasted mutton to popular dimsums and kebabs at ₹200–400 per person.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CHAPTER 3: SIGNATURE MENU EXPLORER (Dish 3: Spiced Chicken Kosha & Herb Paratha) -->
+    <!-- CHAPTER 3: MENU HIGHLIGHTS (Dish 3: Kadai Chicken & Tandoori Roti) -->
     <section id="menu" class="chapter" data-chapter="3" aria-labelledby="menu-heading">
-      <div class="chapter__content reveal-card">
+      <div class="chapter__content reveal-copy">
         <p class="eyebrow">
           <span class="eyebrow__line" aria-hidden="true"></span>
-          Diverse Multicuisine Kitchen
+          Menu Highlights
         </p>
 
         <h2 id="menu-heading" class="section-title">
-          From Charcoal Tandoor<br>
-          <em>To Aromatic Dum Handi</em>
+          Kebabs, Dimsums,<br>
+          <em>Biryani &amp; Wok Classics</em>
         </h2>
 
         <p class="section-intro">
-          Explore crowd favorites spanning authentic Indian gravies, saffron-scented Kolkata biryanis, charcoal kebabs, vibrant vegetarian plates, and wok-fired Chinese classics.
+          Freshly prepared North Indian mains, seafood &amp; tandoor starters, Indo-Chinese favorites, and refreshing shakes — loved for generous taste at less price (<strong>₹200–400 per person</strong>).
         </p>
 
-        <!-- Interactive Category Tabs -->
+        <!-- Minimalist Frameless Underline Category Tabs -->
         <div class="menu-tabs" role="tablist" aria-label="Menu categories">
           <button type="button" class="menu-tab is-active" role="tab" aria-selected="true" data-filter="all">All Highlights</button>
-          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="biryani">Biryani &amp; Kebabs</button>
-          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="indian">Indian Mains</button>
-          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="veg">Vegetarian</button>
-          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="chinese">Chinese &amp; Fast Food</button>
+          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="starters">Kebabs &amp; Starters</button>
+          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="indian">Biryani &amp; Indian</button>
+          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="chinese">Chinese &amp; Noodles</button>
+          <button type="button" class="menu-tab" role="tab" aria-selected="false" data-filter="drinks">Shakes &amp; Mocktails</button>
         </div>
 
-        <!-- Menu Items List -->
-        <div class="menu-grid" id="menu-grid" role="tabpanel">
-          <article class="menu-item" data-category="biryani">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+        <!-- Frameless Editorial Menu List (Hairline Rules Only, Zero Boxes) -->
+        <ul class="menu-list" id="menu-grid" role="tabpanel">
+          <li class="menu-entry" data-category="starters">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
-                <h3>Tandoori Chicken Tikka Kebab</h3>
-              </div>
-              <span class="menu-item__price">₹260</span>
+                Dimsums
+                <em class="popular-tag">Popular</em>
+              </span>
+              <span class="menu-entry__cat">Starter</span>
             </div>
-            <p>Char-grilled spiced boneless chicken served on banana leaf with mint-saffron dip and crisp onion salad.</p>
-          </article>
+            <p>Steamed bite-sized dumplings served piping hot with house chili-garlic dip.</p>
+          </li>
 
-          <article class="menu-item" data-category="biryani">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+          <li class="menu-entry" data-category="starters">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
-                <h3>Royal Kolkata Chicken Dum Biryani</h3>
-              </div>
-              <span class="menu-item__price">₹240</span>
+                Ajwain Fish Tikka Kebab
+                <em class="popular-tag">Popular</em>
+              </span>
+              <span class="menu-entry__cat">Tandoor</span>
             </div>
-            <p>Long-grain saffron basmati steamed on dum with tender spiced chicken, golden birista, boiled egg &amp; fresh mint.</p>
-          </article>
+            <p>Char-grilled fish fillets marinated with carom seeds, mustard, and smoky tandoor spices.</p>
+          </li>
 
-          <article class="menu-item" data-category="indian">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+          <li class="menu-entry" data-category="indian">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
-                <h3>Slow-Braised Chicken Kosha &amp; Herb Paratha</h3>
-              </div>
-              <span class="menu-item__price">₹290</span>
+                Biryani &amp; Slow-Roasted Mutton
+              </span>
+              <span class="menu-entry__cat">Signature</span>
             </div>
-            <p>Rich caramelized onion-garam masala Bengali chicken curry paired with flaky tawa-toasted coriander paratha.</p>
-          </article>
+            <p>Fragrant spiced biryani alongside tender slow-roasted mutton praised across guest reviews.</p>
+          </li>
 
-          <article class="menu-item" data-category="veg">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+          <li class="menu-entry" data-category="starters">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
+                <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
+                Kebabs · Malai Tikka &amp; Chicken Satay
+              </span>
+              <span class="menu-entry__cat">Grill</span>
+            </div>
+            <p>Juicy creamy malai tikka kebabs, skewered chicken satay, and crisp chicken salt pepper.</p>
+          </li>
+
+          <li class="menu-entry" data-category="starters">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--veg" title="Vegetarian" aria-label="Vegetarian"></span>
-                <h3>Charred Paneer Tikka Masala</h3>
-              </div>
-              <span class="menu-item__price">₹250</span>
+                Hariyali Tikka Mushroom
+              </span>
+              <span class="menu-entry__cat">Veg Tandoor</span>
             </div>
-            <p>Smoky tandoor cottage cheese cubes simmered in velvety spiced tomato-butter makhani with blistered cherry tomatoes.</p>
-          </article>
+            <p>Fresh button mushrooms glazed in vibrant mint-coriander marinade and roasted over charcoal.</p>
+          </li>
 
-          <article class="menu-item" data-category="veg">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
-                <span class="diet-mark diet-mark--veg" title="Vegetarian" aria-label="Vegetarian"></span>
-                <h3>Subz Dum Biryani &amp; Burani Raita</h3>
-              </div>
-              <span class="menu-item__price">₹200</span>
-            </div>
-            <p>Aromatic saffron rice layered with spiced seasonal vegetables, cashews, kewra essence, and cooling garlic raita.</p>
-          </article>
-
-          <article class="menu-item" data-category="chinese">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+          <li class="menu-entry" data-category="starters">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
-                <h3>Chilli Garlic Hakka Noodles &amp; Chilli Chicken</h3>
-              </div>
-              <span class="menu-item__price">₹270</span>
+                Fish with Chips, Fish Fries &amp; Chilli Fish
+              </span>
+              <span class="menu-entry__cat">Seafood</span>
             </div>
-            <p>Classic Kolkata wok-tossed noodles with crisp bell peppers paired with glazed sesame chilli chicken bites.</p>
-          </article>
+            <p>Golden crispy fish fries, classic fish with chips, bhetki crudo, and fiery wok-tossed chilli fish.</p>
+          </li>
 
-          <article class="menu-item" data-category="indian">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+          <li class="menu-entry" data-category="indian">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
-                <h3>Mutton Rogan Josh &amp; Butter Naan</h3>
-              </div>
-              <span class="menu-item__price">₹340</span>
+                Kadai Chicken &amp; Tandoori Roti
+              </span>
+              <span class="menu-entry__cat">North Indian</span>
             </div>
-            <p>Succulent slow-simmered mutton in Kashmiri chili &amp; whole-spice gravy accompanied by blistered tandoori butter naan.</p>
-          </article>
+            <p>Aromatic kadai masala chicken and velvety Chicken Bharta paired with blistered tandoori roti.</p>
+          </li>
 
-          <article class="menu-item" data-category="chinese">
-            <div class="menu-item__head">
-              <div class="menu-item__title-wrap">
+          <li class="menu-entry" data-category="indian">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
                 <span class="diet-mark diet-mark--veg" title="Vegetarian" aria-label="Vegetarian"></span>
-                <h3>Crispy Chilli Baby Corn &amp; Veg Fried Rice</h3>
-              </div>
-              <span class="menu-item__price">₹220</span>
+                Kashmiri Pulao &amp; Kadhai Paneer
+              </span>
+              <span class="menu-entry__cat">Veg Main</span>
             </div>
-            <p>Golden crunch baby corn tossed in fiery sweet-garlic wok glaze alongside fragrant spring-onion fried rice.</p>
-          </article>
-        </div>
+            <p>Sweet-spiced dry-fruit Kashmiri pulao served alongside rich bell-pepper kadhai paneer.</p>
+          </li>
+
+          <li class="menu-entry" data-category="chinese">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
+                <span class="diet-mark diet-mark--nonveg" title="Non-Vegetarian" aria-label="Non-Vegetarian"></span>
+                Hong Kong Egg Chicken Noodles &amp; Hunan Chicken
+              </span>
+              <span class="menu-entry__cat">Wok</span>
+            </div>
+            <p>Savory Hong Kong noodles, spicy Hunan chicken, Drums of Heaven, and classic Veg Hakka Noodles.</p>
+          </li>
+
+          <li class="menu-entry" data-category="drinks">
+            <div class="menu-entry__top">
+              <span class="menu-entry__name">
+                <span class="diet-mark diet-mark--veg" title="Vegetarian" aria-label="Vegetarian"></span>
+                Oreo Blast Shake &amp; Mocktails
+              </span>
+              <span class="menu-entry__cat">Beverages</span>
+            </div>
+            <p>Thick chocolaty Oreo Blast Shake and chilled handcrafted riverside mocktails.</p>
+          </li>
+        </ul>
 
         <p class="menu-footnote">
-          Typical spend <strong>₹200–400 per person</strong> · Dedicated <strong>All-You-Can-Eat</strong> &amp; <strong>Vegetarian</strong> selections available for dine-in, food court &amp; takeaway.
+          Also featuring <strong>Chicken Bharta</strong>, <strong>Chicken Salt Pepper</strong>, <strong>Drums of Heaven</strong>, and <strong>Veg Hakka Noodles</strong> — typical dining budget <strong>₹200–400 per person</strong>.
         </p>
       </div>
     </section>
 
-    <!-- CHAPTER 4: SERVICE OPTIONS & WHAT'S NEW ON GOOGLE (Dish 4: Charred Paneer Tikka Masala) -->
-    <section id="experience" class="chapter" data-chapter="4" aria-labelledby="experience-heading">
-      <div class="chapter__content reveal-card">
+    <!-- CHAPTER 4: GOOGLE REVIEW SUMMARY (Dish 4: Kadhai Paneer & Veg Specialties) -->
+    <section id="reviews" class="chapter" data-chapter="4" aria-labelledby="reviews-heading">
+      <div class="chapter__content reveal-copy">
         <p class="eyebrow">
           <span class="eyebrow__line" aria-hidden="true"></span>
-          Dining Options &amp; Hooghly Community
+          Google Review Summary
         </p>
 
-        <h2 id="experience-heading" class="section-title">
-          Feasts For Every Table,<br>
-          <em>Celebrations All Year</em>
+        <h2 id="reviews-heading" class="section-title">
+          Rated 4.3 Stars<br>
+          <em>By 952 Diners</em>
         </h2>
 
-        <!-- Detailed Service Options Grid -->
-        <div class="service-cards">
-          <div class="service-card">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/>
-              </svg>
+        <!-- Frameless Rating Score & Distribution Bars -->
+        <div class="rating-overview">
+          <div class="rating-big">
+            <span class="rating-big__score">4.3</span>
+            <div class="rating-big__stars" aria-label="4.3 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.97l-6.18 3.24 1.18-6.88-5-4.87 6.91-1L12 2.2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.97l-6.18 3.24 1.18-6.88-5-4.87 6.91-1L12 2.2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.97l-6.18 3.24 1.18-6.88-5-4.87 6.91-1L12 2.2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.97l-6.18 3.24 1.18-6.88-5-4.87 6.91-1L12 2.2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.35" aria-hidden="true"><path d="M12 2.2l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.97l-6.18 3.24 1.18-6.88-5-4.87 6.91-1L12 2.2z"/></svg>
             </div>
-            <div>
-              <h3>Reservations Required</h3>
-              <p>Reserve effortlessly via District, Swiggy Dineout, Zomato, or a quick phone call so your family table is ready on arrival.</p>
-            </div>
+            <span class="rating-big__count">952 Google Reviews</span>
           </div>
 
-          <div class="service-card">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 12h18M5 12a7 7 0 0 1 14 0M12 5V3M4 16h16M6 20h12"/>
-              </svg>
-            </div>
-            <div>
-              <h3>All You Can Eat</h3>
-              <p>Abundant multicuisine spreads tailored for family get-togethers, weekend celebrations, and hearty appetites.</p>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card__icon service-card__icon--veg" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Vegetarian Options</h3>
-              <p>Extensive vegetarian classics — charred paneer tikka masala, veg dum biryani, creamy dals, and wok-tossed starters.</p>
-            </div>
+          <div class="rating-bars" aria-hidden="true">
+            <div class="rating-bar"><span>5</span><div class="rating-bar__track"><i style="width: 66%"></i></div></div>
+            <div class="rating-bar"><span>4</span><div class="rating-bar__track"><i style="width: 21%"></i></div></div>
+            <div class="rating-bar"><span>3</span><div class="rating-bar__track"><i style="width: 7%"></i></div></div>
+            <div class="rating-bar"><span>2</span><div class="rating-bar__track"><i style="width: 3%"></i></div></div>
+            <div class="rating-bar"><span>1</span><div class="rating-bar__track"><i style="width: 3%"></i></div></div>
           </div>
         </div>
 
-        <!-- What's New on Google Community Bulletin -->
-        <div class="updates-block">
-          <div class="updates-block__header">
-            <div>
-              <span class="updates-badge">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                What’s New on Google
-              </span>
-              <h3>Festive Wishes &amp; Community Greetings</h3>
-            </div>
-            <div class="updates-nav">
-              <button type="button" class="icon-btn" id="updates-prev" aria-label="Scroll festive updates left">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-              <button type="button" class="icon-btn" id="updates-next" aria-label="Scroll festive updates right">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
-          </div>
+        <!-- AI Google Summary Copy directly on wood -->
+        <div class="ai-summary">
+          <p>
+            Diners like this restaurant’s delicious and fresh food, including <strong>bhetki crudo</strong> and <strong>slow-roasted mutton</strong>, and its beautiful riverside views. They also highlight the polite and attentive staff, as well as the calm and peaceful ambiance.
+          </p>
+          <p class="ai-summary__note">
+            Some reviews mention the service can be slow. · <span>Summarised by AI (+76 reviews) · <a href="https://support.google.com/local-listings/answer/9851099?hl=en-IN" target="_blank" rel="noopener noreferrer" class="text-link">Learn more</a></span>
+          </p>
+        </div>
 
-          <div class="updates-scroller" id="updates-scroller" tabindex="0" aria-label="Recent Google posts from Tasty Multicuisine Restaurant">
-            <article class="update-card">
-              <span class="update-card__time">1 day ago · On Google</span>
-              <h4>Happy Guru Nanak Jayanti</h4>
-              <p>Wishing a blessed and peaceful Guru Nanak Jayanti from Tasty Multicuisine Restaurant — trusted best restaurant in Hooghly.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">1 day ago · On Google</span>
-              <h4>Auspicious Kartik Purnima</h4>
-              <p>Wishing our Hooghly guests a peaceful and auspicious Kartik Purnima filled with warmth and togetherness.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">2 days ago · On Google</span>
-              <h4>Happy Dev Diwali</h4>
-              <p>Happy Dev Diwali from Tasty Multicuisine Restaurant, celebrating lights and flavors with Bandel, Chinsurah &amp; Chandannagar.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">5 days ago · On Google</span>
-              <h4>Happy Subh Tulsi Vivah</h4>
-              <p>Warm festive greetings on Subh Tulsi Vivah from Tasty Multicuisine Restaurant, Best Restaurant in Hooghly.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">6 days ago · On Google</span>
-              <h4>Happy Devuthani Gyaras</h4>
-              <p>Celebrating Devuthani Gyaras with our beloved guests and families across Hooghly.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">7 days ago · On Google</span>
-              <h4>Rani Lakshmibai Jayanti</h4>
-              <p>Remembering courage and heritage on Rani Lakshmibai Jayanti from Tasty Multicuisine Restaurant.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">Nov 18, 2026 · On Google</span>
-              <h4>World COPD Day</h4>
-              <p>Spreading health awareness on World COPD Day from Tasty Multicuisine Restaurant, Best Restaurant in Hooghly.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">Nov 15, 2026 · On Google</span>
-              <h4>Birsa Munda Jayanti</h4>
-              <p>Warm wishes on Birsa Munda Jayanti from Tasty Multicuisine Restaurant, Hooghly.</p>
-            </article>
-
-            <article class="update-card">
-              <span class="update-card__time">Nov 14, 2026 · On Google</span>
-              <h4>Cheerful Children’s Day</h4>
-              <p>Wishing all young diners and families a cheerful Children’s Day at Tasty Multicuisine Restaurant!</p>
-            </article>
-          </div>
+        <!-- Frameless Guest Quotes List -->
+        <div class="quotes-list">
+          <blockquote class="guest-quote">
+            <p>“Food quality good. Service decent. Loved this place, will come frequently now.”</p>
+          </blockquote>
+          <blockquote class="guest-quote">
+            <p>“2nd day we ordered egg fried rice, Chili chicken &amp; malai tikka kebab.”</p>
+          </blockquote>
+          <blockquote class="guest-quote">
+            <p>“Coolest ambience as the restaurant is located near Hooghly, Chinsurah.”</p>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- CHAPTER 5: RESERVATIONS, LOCATION, HOURS & FOOTER (Dish 5: Indo-Chinese Wok Platter) -->
+    <!-- CHAPTER 5: VISIT, HOURS, PHONE & DIRECTIONS (Dish 5: Hong Kong Noodles & Chilli Classics) -->
     <section id="visit" class="chapter chapter--visit" data-chapter="5" aria-labelledby="visit-heading">
-      <div class="chapter__content reveal-card">
+      <div class="chapter__content reveal-copy">
         <p class="eyebrow">
           <span class="eyebrow__line" aria-hidden="true"></span>
-          Reserve &amp; Visit Us Tonight
+          Visit Us By The Hooghly
         </p>
 
         <h2 id="visit-heading" class="section-title">
-          Your Table Awaits<br>
-          <em>At Khadina More</em>
+          Pratappur More,<br>
+          <em>Near Mayurpankhi Ghat</em>
         </h2>
 
-        <!-- Official Reservation Partners -->
-        <div class="booking-strip">
-          <p class="booking-strip__label">Official Reservation Providers — Reservations Required</p>
-          <div class="partner-grid">
-            <a
-              class="partner-card"
-              href="https://www.district.in/dining/kolkata/tasty-restaurant-chinsura/book?utm_source=rwg&amp;dineIn-st=%7Bavailability_slot_start_seconds%7D&amp;ctx_covers=%7Bresources_party_size%7D&amp;rwg_token=ALcMQYYzZRR1aE-rq5GYZ7TN-Ki8aHUz57zqW2WU12YnjlBpayT9ha30vxaGvtQyNrcfhcjZcCHhzjLzRkOQP3YzJCGVToVH2jl2KSkAx5ANqYQEIG0gBWI%3D"
-              target="_blank"
-              rel="noopener noreferrer">
-              <span class="partner-card__brand">District</span>
-              <span class="partner-card__domain">district.in</span>
-              <span class="partner-card__cta">
-                Book Slot
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              </span>
-            </a>
-
-            <a
-              class="partner-card"
-              href="https://www.swiggy.com/restaurants/tasty-restaurant-chinsurah-jadavpur-kolkata-853955/dineout?is_retargeting=true&amp;media_source=GoogleReserve&amp;utm_campaign=GoogleMap&amp;utm_source=GoogleReserve"
-              target="_blank"
-              rel="noopener noreferrer">
-              <span class="partner-card__brand">Swiggy Dineout</span>
-              <span class="partner-card__domain">swiggy.com</span>
-              <span class="partner-card__cta">
-                Reserve Now
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              </span>
-            </a>
-
-            <a
-              class="partner-card"
-              href="https://www.zomato.com/kolkata/tasty-restaurant-chinsura/book?utm_source=rwg"
-              target="_blank"
-              rel="noopener noreferrer">
-              <span class="partner-card__brand">Zomato</span>
-              <span class="partner-card__domain">zomato.com</span>
-              <span class="partner-card__cta">
-                Book Table
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              </span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Address, Phone & Hours Details Card -->
-        <div class="contact-card">
+        <!-- Frameless Contact Rows Separated by Hairlines -->
+        <div class="contact-list">
           <div class="contact-row">
             <span class="contact-row__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -730,11 +632,11 @@
               </svg>
             </span>
             <div class="contact-row__body">
-              <h3>Address</h3>
-              <p id="restaurant-address">257, Mahatma Gandhi Rd, Khadina More, Shilbagan, Chinsurah R S, Chinsurah, West Bengal 712101</p>
+              <h3>Location</h3>
+              <p id="restaurant-address">PRATAPPUR MORE, near MAYURPANKHI GHAT, Chinsurah R S, Chinsurah, West Bengal 712103</p>
               <div class="contact-row__links">
                 <a
-                  href="https://www.google.com/search?sa=X&amp;sca_esv=540fe14f894ad9bb&amp;q=tasty+multicuisine+restaurant+address&amp;ludocid=4394769286593374989"
+                  href="https://maps.google.com/maps?sca_esv=fc9045e6de37b56e&amp;udm&amp;fvr=1&amp;pvq=Cg0vZy8xMWwxbXNoaF80IhoKFHJpdmVyc2lkZSByZXN0YXVyYW50EAIYA4kB2KSDEoJjl5o&amp;lqi=ChRyaXZlcnNpZGUgcmVzdGF1cmFudEjk_568hrKAgAhaHBAAEAEYACIUcml2ZXJzaWRlIHJlc3RhdXJhbnSSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&amp;vet=10CAAQoqAOahcKEwjYvNLBw6OYAxUAAAAAHQAAAAAQBw..i&amp;cs=1&amp;um=1&amp;ie=UTF-8&amp;fb=1&amp;gl=in&amp;sa=X&amp;ftid=0x39f897879badb905:0x9a9763821283a4d8"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-link">
@@ -755,8 +657,8 @@
             </span>
             <div class="contact-row__body">
               <h3>Phone</h3>
-              <p><a href="tel:+919836259128" class="phone-link">098362 59128</a></p>
-              <span class="contact-row__sub">Call directly for group tables, takeaway &amp; food court inquiries</span>
+              <p><a href="tel:+916289743827" class="phone-link">062897 43827</a></p>
+              <span class="contact-row__sub">Call for outdoor riverside seating, family tables &amp; kids’ birthday celebrations</span>
             </div>
           </div>
 
@@ -768,49 +670,29 @@
               </svg>
             </span>
             <div class="contact-row__body">
-              <h3>Hours &amp; Pricing</h3>
-              <p><strong>Open · Closes 12 AM</strong> · Price per person: <strong>₹200–400</strong> (Reported by 207 people)</p>
-              <a
-                href="https://www.google.com/search?sa=X&amp;sca_esv=540fe14f894ad9bb&amp;q=Tasty+Multicuisine+Restaurant+Hours&amp;ludocid=4394769286593374989"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-link">
-                View Live Hours on Google
-              </a>
+              <h3>Hours &amp; Dining Details</h3>
+              <p><strong>Open · Closes 11 PM</strong> · Outdoor seating · Good for kids’ birthdays</p>
+              <span class="contact-row__sub">Price per person: ₹200–400 (Reported by 62 people) · Rated 4.3 ★ across 952 Google reviews</span>
             </div>
           </div>
         </div>
 
-        <!-- Footer inside final chapter so plate remains anchored cleanly -->
+        <div class="cta-row cta-row--visit">
+          <a href="tel:+916289743827" class="btn btn--primary btn--lg">
+            <span>Call 062897 43827</span>
+          </a>
+          <a
+            href="https://maps.google.com/maps?sca_esv=fc9045e6de37b56e&amp;udm&amp;fvr=1&amp;pvq=Cg0vZy8xMWwxbXNoaF80IhoKFHJpdmVyc2lkZSByZXN0YXVyYW50EAIYA4kB2KSDEoJjl5o&amp;lqi=ChRyaXZlcnNpZGUgcmVzdGF1cmFudEjk_568hrKAgAhaHBAAEAEYACIUcml2ZXJzaWRlIHJlc3RhdXJhbnSSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&amp;vet=10CAAQoqAOahcKEwjYvNLBw6OYAxUAAAAAHQAAAAAQBw..i&amp;cs=1&amp;um=1&amp;ie=UTF-8&amp;fb=1&amp;gl=in&amp;sa=X&amp;ftid=0x39f897879badb905:0x9a9763821283a4d8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--ghost btn--lg">
+            <span>Get Directions</span>
+          </a>
+        </div>
+
         <footer class="site-footer">
-          <div class="social-links" aria-label="Social media profiles">
-            <a href="https://www.instagram.com/tastymulticuisinerestaurant/" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-              <span>Instagram</span>
-            </a>
-
-            <a href="https://www.facebook.com/tastymulticuisinerestaurant" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-              <span>Facebook</span>
-            </a>
-
-            <a href="https://www.youtube.com/channel/UCApnle-Tew966qesKRm72zA" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-              </svg>
-              <span>YouTube</span>
-            </a>
-          </div>
-
           <p class="footer-meta">
-            © Tasty Multicuisine Restaurant · Chinsurah, West Bengal 712101 · Serving Hooghly Since 2011
+            © Riverside Restaurant · Pratappur More, near Mayurpankhi Ghat, Chinsurah, West Bengal 712103
           </p>
         </footer>
       </div>
@@ -818,17 +700,17 @@
   </main>
 
   <!-- =====================================================================
-       NATIVE MODAL DIALOG FOR TABLE RESERVATIONS (closedby="any")
+       NATIVE MODAL DIALOG FOR QUICK CALL / DIRECTIONS (closedby="any")
        ===================================================================== -->
-  <dialog id="reserve-dialog" class="reserve-dialog" closedby="any" aria-labelledby="reserve-dialog-title">
-    <div class="reserve-dialog__inner">
-      <div class="reserve-dialog__head">
+  <dialog id="visit-dialog" class="visit-dialog" closedby="any" aria-labelledby="visit-dialog-title">
+    <div class="visit-dialog__inner">
+      <div class="visit-dialog__head">
         <div>
-          <p class="eyebrow eyebrow--compact">Reservations Required</p>
-          <h1 id="reserve-dialog-title" class="reserve-dialog__title">Reserve Your Table</h1>
+          <p class="eyebrow eyebrow--compact">Outdoor Seating · Closes 11 PM</p>
+          <h1 id="visit-dialog-title" class="visit-dialog__title">Visit Riverside Restaurant</h1>
         </div>
         <form method="dialog">
-          <button type="submit" value="close" class="icon-btn icon-btn--close" aria-label="Close reservation dialog">
+          <button type="submit" value="close" class="icon-btn" aria-label="Close visit dialog">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M18 6 6 18M6 6l12 12"/>
             </svg>
@@ -836,52 +718,30 @@
         </form>
       </div>
 
-      <p class="reserve-dialog__desc">
-        Choose your preferred booking partner for instant table confirmation at <strong>Tasty Multicuisine Restaurant</strong>, 257 Mahatma Gandhi Rd, Khadina More, Chinsurah (Open daily until 12 AM).
+      <p class="visit-dialog__desc">
+        <strong>PRATAPPUR MORE, near MAYURPANKHI GHAT, Chinsurah R S, Chinsurah, West Bengal 712103</strong> — Scenic North Indian riverside dining, ₹200–400 per person, rated 4.3 ★ (952 reviews).
       </p>
 
-      <div class="dialog-partners">
-        <a
-          class="dialog-partner"
-          href="https://www.district.in/dining/kolkata/tasty-restaurant-chinsura/book?utm_source=rwg&amp;dineIn-st=%7Bavailability_slot_start_seconds%7D&amp;ctx_covers=%7Bresources_party_size%7D&amp;rwg_token=ALcMQYYzZRR1aE-rq5GYZ7TN-Ki8aHUz57zqW2WU12YnjlBpayT9ha30vxaGvtQyNrcfhcjZcCHhzjLzRkOQP3YzJCGVToVH2jl2KSkAx5ANqYQEIG0gBWI%3D"
-          target="_blank"
-          rel="noopener noreferrer"
-          autofocus>
+      <div class="dialog-actions">
+        <a href="tel:+916289743827" class="dialog-link" autofocus>
           <div>
-            <strong>Book on District</strong>
-            <span>district.in · Instant dining slots</span>
+            <strong>Call 062897 43827</strong>
+            <span>Table inquiries, outdoor riverside seating &amp; kids’ birthdays</span>
           </div>
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
 
         <a
-          class="dialog-partner"
-          href="https://www.swiggy.com/restaurants/tasty-restaurant-chinsurah-jadavpur-kolkata-853955/dineout?is_retargeting=true&amp;media_source=GoogleReserve&amp;utm_campaign=GoogleMap&amp;utm_source=GoogleReserve"
+          class="dialog-link"
+          href="https://maps.google.com/maps?sca_esv=fc9045e6de37b56e&amp;udm&amp;fvr=1&amp;pvq=Cg0vZy8xMWwxbXNoaF80IhoKFHJpdmVyc2lkZSByZXN0YXVyYW50EAIYA4kB2KSDEoJjl5o&amp;lqi=ChRyaXZlcnNpZGUgcmVzdGF1cmFudEjk_568hrKAgAhaHBAAEAEYACIUcml2ZXJzaWRlIHJlc3RhdXJhbnSSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&amp;vet=10CAAQoqAOahcKEwjYvNLBw6OYAxUAAAAAHQAAAAAQBw..i&amp;cs=1&amp;um=1&amp;ie=UTF-8&amp;fb=1&amp;gl=in&amp;sa=X&amp;ftid=0x39f897879badb905:0x9a9763821283a4d8"
           target="_blank"
           rel="noopener noreferrer">
           <div>
-            <strong>Book on Swiggy Dineout</strong>
-            <span>swiggy.com · Dineout table offers</span>
+            <strong>Open Directions in Google Maps</strong>
+            <span>Near Mayurpankhi Ghat, Chinsurah, Hooghly</span>
           </div>
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
-
-        <a
-          class="dialog-partner"
-          href="https://www.zomato.com/kolkata/tasty-restaurant-chinsura/book?utm_source=rwg"
-          target="_blank"
-          rel="noopener noreferrer">
-          <div>
-            <strong>Book on Zomato</strong>
-            <span>zomato.com · Verified Chinsurah listing</span>
-          </div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
-        </a>
-      </div>
-
-      <div class="dialog-call-bar">
-        <span>Prefer speaking with our host desk?</span>
-        <a href="tel:+919836259128" class="btn btn--primary btn--sm">Call 098362 59128</a>
       </div>
     </div>
   </dialog>
