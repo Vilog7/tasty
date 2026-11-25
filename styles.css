@@ -29,8 +29,8 @@
   --plate-size: clamp(360px, 42vw, 600px);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-copy: 0 2px 14px rgba(0, 0, 0, 0.82);
-  --shadow-heading: 0 6px 28px rgba(0, 0, 0, 0.88);
+  --shadow-copy: 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.85);
+  --shadow-heading: 0 4px 16px rgba(0, 0, 0, 0.96), 0 8px 34px rgba(0, 0, 0, 0.88);
 }
 
 *,
@@ -166,23 +166,16 @@ button {
   filter: brightness(0.84) contrast(1.06) saturate(1.05);
 }
 
-/* Seamless full-viewport editorial vignette — darkens text zone organically
-   without any box edges while keeping the glowing wood & rotating plate vivid */
+/* Subtle natural ambient vignette — preserves full wood grain visibility everywhere
+   with zero brown gradient boxes or curtains on desktop or mobile */
 .stage-scrim {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      95deg,
-      rgba(9, 5, 3, 0.88) 0%,
-      rgba(11, 6, 3, 0.78) 40%,
-      rgba(12, 7, 4, 0.28) 66%,
-      rgba(9, 5, 3, 0.42) 100%
-    ),
     radial-gradient(
-      ellipse 68% 68% at 72% 52%,
-      rgba(255, 192, 104, 0.08) 0%,
-      rgba(8, 4, 2, 0.5) 100%
+      ellipse 78% 78% at 70% 50%,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(8, 4, 2, 0.44) 100%
     );
 }
 
@@ -1171,13 +1164,19 @@ button {
 
 .rating-big {
   display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.rating-big__meta {
+  display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.22rem;
 }
 
 .rating-big__score {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: 2.45rem;
   font-weight: 700;
   line-height: 1;
   color: var(--text-primary);
@@ -1185,13 +1184,16 @@ button {
 
 .rating-big__stars {
   display: inline-flex;
-  gap: 0.2rem;
+  align-items: center;
+  gap: 0.18rem;
   color: var(--accent-gold-bright);
 }
 
-.rating-big__stars svg {
-  width: 0.95rem;
-  height: 0.95rem;
+.rating-big__stars svg,
+.review-star {
+  width: 0.88rem;
+  height: 0.88rem;
+  flex-shrink: 0;
 }
 
 .rating-big__count {
@@ -1751,16 +1753,14 @@ dialog.mobile-drawer::backdrop {
     text-overflow: ellipsis;
   }
 
-  /* Soft top-to-bottom natural darkening over wood — zero card boxes, crisp mobile legibility */
+  /* Keep wood planks & rotating plate clearly visible behind text on mobile — no heavy brown gradient block */
   .stage-scrim {
     background:
-      linear-gradient(
-        180deg,
-        rgba(9, 5, 3, 0.56) 0%,
-        rgba(9, 5, 3, 0.14) 22%,
-        rgba(9, 5, 3, 0.68) 44%,
-        rgba(9, 5, 3, 0.88) 72%,
-        rgba(9, 5, 3, 0.94) 100%
+      radial-gradient(
+        circle at 50% 24%,
+        rgba(0, 0, 0, 0.06) 0%,
+        rgba(8, 4, 2, 0.42) 65%,
+        rgba(8, 4, 2, 0.54) 100%
       );
   }
 
@@ -1770,8 +1770,15 @@ dialog.mobile-drawer::backdrop {
     padding: calc(var(--header-height) + env(safe-area-inset-top, 0px) + var(--plate-size) + 4rem) 1.25rem 5rem;
   }
 
-  .chapter__content {
+  .chapter__content,
+  .chapter--hero .chapter__content,
+  .chapter:not(.chapter--hero) .chapter__content {
     max-width: 100%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 }
 
@@ -1793,11 +1800,11 @@ dialog.mobile-drawer::backdrop {
     display: grid;
     grid-template-columns: auto auto 1fr;
     align-items: center;
-    gap: 0.55rem;
-    padding: 0.6rem 0.9rem calc(0.6rem + env(safe-area-inset-bottom, 0px));
-    background: linear-gradient(180deg, rgba(12, 7, 4, 0.86) 0%, rgba(10, 6, 3, 0.96) 100%);
+    gap: 0.65rem;
+    padding: 0.55rem 0.9rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(8, 4, 2, 0.62);
     border-top: 1px solid var(--hairline);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
   }
 
   .mobile-bottom-bar__item {
@@ -1805,16 +1812,16 @@ dialog.mobile-drawer::backdrop {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.18rem;
-    min-width: 3.75rem;
-    min-height: 2.95rem;
-    padding: 0.35rem 0.65rem;
-    border-radius: var(--radius-sm);
+    gap: 0.16rem;
+    min-width: 3.5rem;
+    min-height: 2.85rem;
+    padding: 0.3rem 0.55rem;
     text-decoration: none;
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--text-secondary);
-    border: 1px solid var(--hairline);
+    color: var(--text-primary);
+    background: transparent;
+    border: 0;
   }
 
   .mobile-bottom-bar__item .icon {
